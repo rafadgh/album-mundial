@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Golazo Stickers</title>
+  <meta name="description" content="Contáctanos por WhatsApp, formulario o correo. Respondemos en menos de 24 horas. Pedidos, dudas y cotizaciones de mayoreo.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-main {
+      background:
+        linear-gradient(rgba(0,6,2,.83), rgba(0,6,2,.83)),
+        url('FONDOS/FONDO%203.PNG') center / cover scroll;
+      padding: var(--section-py) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-main::before {
+      content: '';
+      position: absolute; top: -20%; right: -15%;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(22,72,184,.1) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .contact-main::after {
+      content: '';
+      position: absolute; bottom: -20%; left: -10%;
+      width: 50vw; height: 50vw;
+      background: radial-gradient(circle, rgba(204,26,48,.08) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      position: relative; z-index: 1;
+    }
+
+    /* Tarjetas de contacto */
+    .contact-methods { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-method-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-xl);
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+    .contact-method-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(22,72,184,.3);
+      background: rgba(22,72,184,.06);
+    }
+    .contact-method-card.wa-card:hover { border-color: rgba(37,211,102,.35); background: rgba(37,211,102,.06); }
+    .contact-method-card.coral-card:hover { border-color: rgba(204,26,48,.35); background: rgba(204,26,48,.06); }
+
+    .cm-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .cm-icon.green  { background: linear-gradient(135deg, rgba(37,211,102,.25), rgba(18,140,126,.12)); }
+    .cm-icon.turq   { background: linear-gradient(135deg, rgba(22,72,184,.25), rgba(22,72,184,.08)); }
+    .cm-icon.coral  { background: linear-gradient(135deg, rgba(204,26,48,.25), rgba(204,26,48,.08)); }
+    .cm-icon.gold   { background: linear-gradient(135deg, rgba(224,160,0,.25), rgba(224,160,0,.08)); }
+
+    .cm-body {}
+    .cm-title { font-weight: 900; font-size: .98rem; color: var(--white); margin-bottom: .25rem; }
+    .cm-value { font-size: .88rem; color: rgba(248,250,252,.6); line-height: 1.5; }
+    .cm-badge {
+      display: inline-block;
+      background: rgba(37,211,102,.18); color: #4ADE80;
+      border-radius: 999px; padding: .15rem .6rem;
+      font-size: .7rem; font-weight: 800; letter-spacing: .05em;
+      text-transform: uppercase; margin-top: .35rem;
+    }
+    .cm-badge.fast { background: rgba(204,26,48,.15); color: var(--coral-light); }
+
+    /* Horario */
+    .horario-box {
+      background: rgba(224,160,0,.08);
+      border: 1px solid rgba(224,160,0,.25);
+      border-radius: var(--radius-xl); padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .horario-box h4 { font-weight: 900; color: var(--gold-light); margin-bottom: .8rem; display:flex; gap:.5rem; align-items:center; }
+    .horario-row { display: flex; justify-content: space-between; align-items: center; padding: .45rem 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: .85rem; }
+    .horario-row:last-child { border-bottom: none; }
+    .horario-day   { color: rgba(248,250,252,.65); font-weight: 600; }
+    .horario-time  { color: var(--white); font-weight: 800; }
+    .horario-closed { color: rgba(248,250,252,.35); font-style: italic; font-weight: 400; }
+
+    /* Formulario */
+    .contact-form-box {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius-2xl);
+      padding: 2.5rem;
+    }
+    .contact-form-box h3 {
+      font-family: var(--font-display);
+      font-size: 2rem; color: var(--white); margin-bottom: .3rem;
+    }
+    .contact-form-box .form-sub { font-size: .88rem; color: rgba(248,250,252,.5); margin-bottom: 1.8rem; }
+
+    /* Mapa placeholder */
+    .map-placeholder {
+      background: rgba(0,12,4,.75);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius-xl);
+      height: 180px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: .5rem; text-align: center;
+      font-size: .88rem; color: rgba(248,250,252,.45);
+      margin-top: 2rem;
+    }
+    .map-placeholder span { font-size: 2.2rem; }
+    .map-placeholder strong { color: var(--white); font-size: .95rem; }
+
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon" aria-hidden="true">★</div>
+      <span class="brand-highlight">GOLAZO</span>&nbsp;STICKERS
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html#sobres">Sobres y Cajas</a></li>
+      <li><a href="productos.html#album">Álbum</a></li>
+      <li><a href="productos.html#paquetes">Paquetes</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li class="nav-cta"><a href="index.html#pedido" class="btn btn-primary btn-sm">Hacer pedido</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="papel-picado-wrap" aria-hidden="true" id="papelPicado"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> / <span>Contacto</span>
+    </div>
+    <h1 class="page-header-title">Estamos <span style="color:var(--turq-light)">aquí</span> para ayudarte</h1>
+    <p class="page-header-sub">Escríbenos, llama o llena el formulario. Respondemos rápido.</p>
+  </div>
+</header>
+
+<!-- CONTACT MAIN -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Métodos de contacto -->
+      <div>
+        <div class="section-header reveal">
+          <span class="section-label">Canales de atención</span>
+          <h2 class="section-title" style="font-size:2.2rem;">Contáctanos<br>como <span>prefieras</span></h2>
+        </div>
+
+        <div class="contact-methods">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/525587975494" target="_blank" rel="noopener noreferrer" class="contact-method-card wa-card reveal delay-1">
+            <div class="cm-icon green">💬</div>
+            <div class="cm-body">
+              <div class="cm-title">WhatsApp</div>
+              <div class="cm-value">+52 55 8797 5494<br>Respuesta inmediata en horario hábil</div>
+              <span class="cm-badge">Más rápido</span>
+            </div>
+          </a>
+          <!-- Pedidos -->
+          <a href="index.html#pedido" class="contact-method-card coral-card reveal delay-3">
+            <div class="cm-icon turq">🛒</div>
+            <div class="cm-body">
+              <div class="cm-title">Formulario de pedido</div>
+              <div class="cm-value">Llena el formulario de pedido en la página principal para un proceso más rápido</div>
+              <span class="cm-badge fast">Pedido directo</span>
+            </div>
+          </a>
+          <!-- Ubicación -->
+          <div class="contact-method-card reveal delay-4" style="cursor:default;">
+            <div class="cm-icon" style="background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(124,58,237,.08));">📍</div>
+            <div class="cm-body">
+              <div class="cm-title">Base de operaciones</div>
+              <div class="cm-value">Ciudad de México, México</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horario -->
+        <div class="horario-box reveal" style="margin-top:1.8rem;">
+          <h4>🕐 Horario de atención</h4>
+          <div class="horario-row">
+            <span class="horario-day">Lunes – Viernes</span>
+            <span class="horario-time">9:00 – 19:00</span>
+          </div>
+          <div class="horario-row">
+            <span class="horario-day">Sábado</span>
+            <span class="horario-time">10:00 – 15:00</span>
+          </div>
+          <div class="horario-row">
+            <span class="horario-day">Domingo</span>
+            <span class="horario-closed">Cerrado</span>
+          </div>
+          <p style="font-size:.76rem; color:rgba(248,250,252,.38); margin-top:.8rem; line-height:1.5;">
+            * Horario de Ciudad de México (UTC-6). Los mensajes fuera de horario son respondidos al siguiente día hábil.
+          </p>
+        </div>
+
+        <!-- Mapa placeholder -->
+        <div class="map-placeholder reveal">
+          <span>🗺️</span>
+          <strong>Ciudad de México, México</strong>
+          <span>Operación 100% online</span>
+        </div>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="contact-form-box reveal-right">
+        <h3>Envíanos un mensaje</h3>
+        <p class="form-sub">¿Tienes dudas, comentarios o quieres hacer un pedido especial? Te respondemos en breve.</p>
+        <form class="order-form-el" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="c-nombre">Nombre completo *</label>
+              <input type="text" id="c-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="c-tel">Teléfono / WhatsApp *</label>
+              <input type="tel" id="c-tel" name="telefono" placeholder="10 dígitos" required autocomplete="tel">
+            </div>
+            <div class="form-group full">
+              <label for="c-email">Correo electrónico *</label>
+              <input type="email" id="c-email" name="correo" placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="c-ciudad">Ciudad / Estado</label>
+              <input type="text" id="c-ciudad" name="ciudad" placeholder="Tu ciudad" autocomplete="address-level2">
+            </div>
+            <div class="form-group">
+              <label for="c-asunto">Asunto</label>
+              <select id="c-asunto" name="asunto">
+                <option value="" disabled selected>Selecciona</option>
+                <option>Hacer un pedido</option>
+                <option>Consulta sobre productos</option>
+                <option>Consulta sobre precios</option>
+                <option>Seguimiento de pedido</option>
+                <option>Problema con mi pedido</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="c-mensaje">Mensaje *</label>
+              <textarea id="c-mensaje" name="comentarios" rows="5" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius-sm); padding:.85rem 1rem; margin-top:.5rem; font-size:.78rem; color:rgba(248,250,252,.45); line-height:1.55;">
+            🔒 Tus datos son confidenciales. Solo los usamos para responderte. Consulta nuestro <a href="privacidad.html" style="color:var(--coral-light);">Aviso de Privacidad</a>.
+          </div>
+
+          <div class="form-actions" style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+              🚀 Enviar mensaje
+            </button>
+            <button type="button" class="btn btn-whatsapp btn-full" data-whatsapp="true">
+              💬 Escribir por WhatsApp
+            </button>
+          </div>
+          <div class="form-success" role="alert"></div>
+        </form>
+
+        <!-- FAQ rápido -->
+        <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.07);">
+          <h4 style="font-weight:900; margin-bottom:1.2rem; font-size:1rem;">Preguntas frecuentes</h4>
+          <div class="faq-list" style="max-width:100%;">
+            <div class="faq-item">
+              <button class="faq-question" style="font-size:.88rem;">¿En cuánto tiempo responden? <span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Por WhatsApp respondemos usualmente en menos de 2 horas en horario hábil. Por formulario o correo, dentro de 24 horas hábiles.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" style="font-size:.88rem;">¿Puedo hacer pedidos directamente aquí? <span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Sí. Puedes usar el formulario de esta página o ir directamente a <a href="index.html#pedido">la sección de pedidos</a> en el inicio. También por WhatsApp.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" style="font-size:.88rem;">¿Tienen atención los fines de semana? <span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Los sábados atendemos de 10:00 a 15:00. Los domingos no hay atención, pero puedes dejar tu mensaje y te respondemos el lunes.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="mid-cta">
+  <div class="container reveal">
+    <h2>¿Listo para hacer tu pedido?</h2>
+    <p>No esperes más. Stock limitado en temporada de torneo.</p>
+    <div class="cta-actions">
+      <a href="index.html#pedido" class="btn btn-secondary btn-lg">📋 Formulario de pedido</a>
+      <a href="productos.html" class="btn btn-gold btn-lg">🛒 Ver productos</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><div class="logo-icon">★</div><span style="color:var(--coral)">GOLAZO</span>&nbsp;STICKERS</div>
+        <p class="footer-tagline">Plataforma independiente de distribución de álbumes coleccionables de futbol.</p>
+        <nav class="footer-contact-items">
+          <a class="footer-contact-item" href="https://wa.me/525587975494" target="_blank" rel="noopener noreferrer"><span>💬</span> WhatsApp: +52 55 8797 5494</a>
+          <span class="footer-contact-item"><span>📍</span> Ciudad de México, México</span>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Productos</h5>
+        <nav class="footer-links">
+          <a href="productos.html#sobres">Sobres</a>
+          <a href="productos.html#sobres">Caja Revendedor</a>
+          <a href="productos.html#album">Álbum Individual</a>
+          <a href="productos.html#paquetes">Paquete Inicio</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <nav class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <nav class="footer-links">
+          <a href="privacidad.html">Aviso de Privacidad</a>
+          <a href="terminos.html">Términos y Condiciones</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p class="footer-copy">© 2026 Golazo Stickers. Todos los derechos reservados.</p>
+        <nav class="footer-legal-links">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+        </nav>
+      </div>
+      <div class="footer-disclaimer">
+        <strong>Aviso legal:</strong> Golazo Stickers es una plataforma de distribución independiente. No está afiliada ni patrocinada por FIFA, Panini, ni ningún torneo o marca oficial. Identidad visual 100% original.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" aria-label="Pedir por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="whatsapp-float-tooltip">Escribir por WhatsApp</span>
+</a>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos — Golazo Stickers | Álbum Panini Mundial 2026</title>
+  <meta name="description" content="Catálogo completo: álbum pasta suave y dura, blisters 10 sobres, caja 100 sobres y paquetes álbum + caja. Panini Mundial 2026.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Tabla comparativa */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 2rem;
+    }
+    .compare-table th {
+      background: rgba(204,26,48,0.12);
+      padding: 0.9rem 1rem;
+      font-weight: 800;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--coral-light);
+    }
+    .compare-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: rgba(248,250,252,0.7);
+      vertical-align: middle;
+    }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.025); }
+    .compare-table .check { color: #4CAF50; font-size: 1rem; }
+    .compare-table .cross  { color: rgba(248,250,252,0.25); font-size: 1rem; }
+    .compare-table .highlight-row td { background: rgba(224,160,0,0.07); }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-xl);
+    }
+
+    /* Sección */
+    .product-section { scroll-margin-top: 90px; }
+    .product-section + .product-section {
+      margin-top: 4.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .product-section-header { margin-bottom: 2rem; }
+
+    /* Badge preventa */
+    .preventa-banner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(135deg, rgba(224,160,0,.12), rgba(224,160,0,.05));
+      border: 1px solid rgba(224,160,0,.3);
+      border-radius: var(--radius-xl);
+      padding: 1rem 1.4rem;
+      margin-bottom: 3rem;
+      font-size: .9rem;
+      color: rgba(248,250,252,.8);
+    }
+    .preventa-banner strong { color: var(--gold-light); }
+    .preventa-banner .pv-icon { font-size: 1.6rem; flex-shrink: 0; }
+
+    /* Nota especial */
+    .product-note-box {
+      background: rgba(22,72,184,.08);
+      border: 1px solid rgba(22,72,184,.25);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .product-note-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--turq-light);
+      margin-bottom: 1rem;
+    }
+    .product-note-box p {
+      font-size: .9rem;
+      color: rgba(248,250,252,.6);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon" aria-hidden="true">★</div>
+      <span>GOLAZO</span>&nbsp;STICKERS
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html#sobres">Sobres y Cajas</a></li>
+      <li><a href="productos.html#album">Álbum</a></li>
+      <li><a href="productos.html#paquetes">Paquetes</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li class="nav-cta"><a href="index.html#pedido" class="btn btn-primary btn-sm">Hacer pedido</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="papel-picado-wrap" aria-hidden="true" id="papelPicado"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> / <span>Productos</span>
+    </div>
+    <h1 class="page-header-title">Catálogo <span style="color:var(--coral)">Panini</span> Mundial 2026</h1>
+    <p class="page-header-sub">48 selecciones · 112 páginas · Preventa abierta · Envío 2ª quincena de mayo 2026</p>
+  </div>
+</header>
+
+<!-- PRODUCTOS -->
+<section class="products section-py">
+  <div class="container">
+
+    <!-- Banner preventa -->
+    <div class="preventa-banner reveal">
+      <span class="pv-icon">📅</span>
+      <div>
+        <strong>Preventa abierta — Panini México</strong><br>
+        Todos los productos del álbum de estampas están en preventa. El envío oficial está estimado para la <strong>2ª quincena de mayo de 2026</strong>. Aparta el tuyo hoy para asegurar disponibilidad.
+      </div>
+    </div>
+
+    <!-- ═══════════ SECCIÓN: SOBRES Y CAJAS ═══════════ -->
+    <div id="sobres" class="product-section">
+      <div class="product-section-header reveal">
+        <span class="section-label">Colección</span>
+        <h2 class="section-title">Sobres y <span>Cajas</span></h2>
+      </div>
+      <div class="products-grid">
+
+        <!-- BLISTER 10 SOBRES -->
+        <article class="product-card reveal delay-1">
+          <div class="product-badge-area">
+            <span class="badge badge-coral">Más popular</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/10%20SOBRES_nobg.png" alt="Blíster 10 Sobres Panini Mundial 2026" loading="lazy">
+          </div>
+          <h2 class="product-name">Blíster<br>10 Sobres</h2>
+          <ul class="product-includes">
+            <li>10 sobres de estampas Panini</li>
+            <li>Posibilidad de stickers especiales</li>
+            <li>Embalaje protector original</li>
+            <li>$24 MXN por sobre</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="blister10">240</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">= $24 por sobre</p>
+            <div class="stock-indicator" data-stock="blister10">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Blisters:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="99">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="orderProduct('Blíster 10 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$240 MXN/blíster')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+        <!-- CAJA 100 SOBRES -->
+        <article class="product-card reveal delay-2">
+          <div class="product-badge-area">
+            <span class="badge badge-turq">Para revender</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/CAJA%20(100%20SOBRES)_nobg.png" alt="Caja 100 Sobres Panini Mundial 2026" loading="lazy">
+          </div>
+          <h2 class="product-name">Caja<br>100 Sobres</h2>
+          <ul class="product-includes">
+            <li>100 sobres Panini por caja</li>
+            <li>Ideal para tienda y reventa</li>
+            <li>$24 MXN por sobre</li>
+            <li>Mismo precio por sobre que el blíster</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="caja100">2,400</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">= $24 por sobre</p>
+            <div class="stock-indicator" data-stock="caja100">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Cajas:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="50">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="orderProduct('Caja 100 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$2,400 MXN/caja')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ═══════════ SECCIÓN: ÁLBUM ═══════════ -->
+    <div id="album" class="product-section">
+      <div class="product-section-header reveal">
+        <span class="section-label">Álbum Oficial</span>
+        <h2 class="section-title">Álbum <span>Panini 2026</span></h2>
+        <p class="section-sub" style="text-align:left; margin-top:.5rem;">112 páginas · 48 selecciones · 18 jugadores por equipo · Preventa</p>
+      </div>
+      <div class="products-grid">
+
+        <!-- ÁLBUM PASTA SUAVE -->
+        <article class="product-card reveal delay-1">
+          <div class="product-badge-area">
+            <span class="badge badge-coral">Entrada</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/%C3%81LBUM%20PASTA%20SUAVE_nobg.png" alt="Álbum Pasta Suave Panini Mundial 2026" loading="lazy">
+          </div>
+          <h2 class="product-name">Álbum<br>Pasta Suave</h2>
+          <ul class="product-includes">
+            <li>112 páginas de alta calidad</li>
+            <li>48 selecciones · 18 jugadores c/u</li>
+            <li>Diseño oficial Panini Mundial 2026</li>
+            <li>Secciones por grupo y selección</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="albumSuave">90</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">Álbum vacío · sin sobres</p>
+            <div class="stock-indicator" data-stock="albumSuave">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Cantidad:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="99">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="orderProduct('Álbum Pasta Suave', this.closest('.product-card').querySelector('.qty-input').value, '$90 MXN/pza')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+        <!-- ÁLBUM PASTA DURA -->
+        <article class="product-card featured reveal delay-2">
+          <div class="product-badge-area">
+            <span class="badge badge-gold">⭐ Premium</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/%C3%81LBUM%20PASTA%20DURA_nobg.png" alt="Álbum Pasta Dura Panini Mundial 2026" loading="lazy">
+          </div>
+          <h2 class="product-name">Álbum<br>Pasta Dura</h2>
+          <ul class="product-includes">
+            <li>112 páginas de alta calidad</li>
+            <li>48 selecciones · 18 jugadores c/u</li>
+            <li>Tapa dura resistente premium</li>
+            <li>Diseño oficial Panini Mundial 2026</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="albumDura">330</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">Álbum vacío · sin sobres</p>
+            <div class="stock-indicator" data-stock="albumDura">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Cantidad:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="99">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-gold btn-full" onclick="orderProduct('Álbum Pasta Dura', this.closest('.product-card').querySelector('.qty-input').value, '$330 MXN/pza')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ═══════════ SECCIÓN: PAQUETES ═══════════ -->
+    <div id="paquetes" class="product-section">
+      <div class="product-section-header reveal">
+        <span class="section-label">Combos y Especiales</span>
+        <h2 class="section-title">Paquetes <span>Panini 2026</span></h2>
+        <p class="section-sub" style="text-align:left; margin-top:.5rem;">Bundles con álbum + caja de 100 sobres</p>
+      </div>
+      <div class="products-grid">
+
+        <!-- BUNDLE SUAVE + CAJA -->
+        <article class="product-card reveal delay-1">
+          <div class="product-badge-area">
+            <span class="badge badge-coral">Bundle</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/%C3%81LBUM%20PASTA%20SUAVE%20+%201%20CAJA(100%20SOBRES)_nobg.png" alt="Álbum Pasta Suave + Caja 100 Sobres" loading="lazy">
+          </div>
+          <h2 class="product-name">Álbum Suave<br>+ Caja 100</h2>
+          <ul class="product-includes">
+            <li>1 álbum pasta suave ($90)</li>
+            <li>1 caja de 100 sobres ($2,400)</li>
+            <li>Precio especial de bundle · ahorro incluido</li>
+            <li>Ideal para iniciar y coleccionar fuerte</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="bundleSuaveCaja">2,450</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">Álbum suave + 100 sobres</p>
+            <div class="stock-indicator" data-stock="bundleSuaveCaja">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Cantidad:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="20">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="orderProduct('Bundle Álbum Suave + Caja 100 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$2,450 MXN')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+        <!-- BUNDLE DURA + CAJA -->
+        <article class="product-card featured reveal delay-2">
+          <div class="product-badge-area">
+            <span class="badge badge-gold">⭐ Bundle Premium</span>
+          </div>
+          <div class="product-img">
+            <img src="FOTOS/%C3%81LBUM%20PASTA%20DURA%20+%201%20CAJA(100%20SOBRES)_nobg.png" alt="Álbum Pasta Dura + Caja 100 Sobres" loading="lazy">
+          </div>
+          <h2 class="product-name">Álbum Duro<br>+ Caja 100</h2>
+          <ul class="product-includes">
+            <li>1 álbum pasta dura ($330)</li>
+            <li>1 caja de 100 sobres ($2,400)</li>
+            <li>Precio especial de bundle · ahorro incluido</li>
+            <li>La opción más completa disponible</li>
+            <li>Preventa · envío mayo 2026</li>
+          </ul>
+          <div class="product-price-area">
+            <div class="product-price">
+              <span class="currency">$</span><span data-price="bundleDuraCaja">2,700</span>
+              <span class="unit">MXN</span>
+            </div>
+            <p class="product-note">Álbum duro + 100 sobres</p>
+            <div class="stock-indicator" data-stock="bundleDuraCaja">
+              <span class="stock-dot yellow"></span>
+              <span class="stock-text yellow">Preventa</span>
+            </div>
+            <div class="product-qty">
+              <span class="qty-label">Cantidad:</span>
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+                <input class="qty-input" type="number" value="1" min="1" max="20">
+                <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+              </div>
+            </div>
+            <button class="btn btn-gold btn-full" onclick="orderProduct('Bundle Álbum Duro + Caja 100 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$2,700 MXN')">
+              📅 Apartar en preventa
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ═══════════ TABLA COMPARATIVA ═══════════ -->
+    <div style="margin-top:5rem;" class="reveal">
+      <div class="section-header text-center">
+        <span class="section-label">Comparativa</span>
+        <h2 class="section-title">¿Qué producto <span>te conviene</span>?</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table" role="table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Álbum</th>
+              <th>Sobres</th>
+              <th>Edición</th>
+              <th>Ideal para</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Álbum Pasta Suave</strong></td>
+              <td>$90 MXN</td>
+              <td><span class="check">✓</span> Suave</td>
+              <td><span class="cross">—</span></td>
+              <td>Estándar</td>
+              <td>Ya tienes sobres</td>
+            </tr>
+            <tr>
+              <td><strong>Álbum Pasta Dura</strong></td>
+              <td>$330 MXN</td>
+              <td><span class="check">✓</span> Duro</td>
+              <td><span class="cross">—</span></td>
+              <td>Premium</td>
+              <td>Coleccionistas</td>
+            </tr>
+            <tr>
+              <td><strong>Blíster 10 Sobres</strong></td>
+              <td>$240 MXN</td>
+              <td><span class="cross">—</span></td>
+              <td>10 sobres</td>
+              <td>Estándar</td>
+              <td>Completar colección</td>
+            </tr>
+            <tr>
+              <td><strong>Caja 100 Sobres</strong></td>
+              <td>$2,400 MXN</td>
+              <td><span class="cross">—</span></td>
+              <td>100 sobres</td>
+              <td>Estándar</td>
+              <td>Tiendas / reventa</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>⭐ Álbum Suave + Caja</strong></td>
+              <td>$2,450 MXN</td>
+              <td><span class="check">✓</span> Suave</td>
+              <td>100 sobres</td>
+              <td>Estándar</td>
+              <td>Empezar desde cero</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>⭐ Álbum Duro + Caja</strong></td>
+              <td>$2,700 MXN</td>
+              <td><span class="check">✓</span> Duro</td>
+              <td>100 sobres</td>
+              <td>Premium</td>
+              <td>La opción completa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nota pedido especial -->
+    <div class="product-note-box reveal" style="margin-top:4rem;">
+      <h3>💡 ¿Tienes un pedido especial?</h3>
+      <p>
+        ¿Quieres cantidades específicas, mezclar productos o tienes dudas sobre disponibilidad en preventa?
+        Escríbenos por WhatsApp y te asesoramos personalmente.
+      </p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="#" class="btn btn-whatsapp" data-whatsapp="Hola, tengo una pregunta sobre el catálogo de productos Panini Mundial 2026.">
+          💬 Consultar por WhatsApp
+        </a>
+        <a href="contacto.html" class="btn btn-secondary">
+          📝 Formulario de contacto
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="mid-cta" style="background: linear-gradient(135deg, var(--night-mid), var(--night));">
+  <div class="container reveal">
+    <h2 style="color:var(--white);">¿Ya sabes qué quieres apartar?</h2>
+    <p>Preventa abierta. Asegura tu lugar antes de que se agote el stock.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="index.html#pedido" class="btn btn-primary btn-lg">📅 Apartar en preventa</a>
+      <a href="#" class="btn btn-whatsapp btn-lg" data-whatsapp="true">💬 Preguntar por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon" aria-hidden="true">★</div>
+          <span style="color:var(--coral)">GOLAZO</span>&nbsp;STICKERS
+        </div>
+        <p class="footer-tagline">Distribuidor independiente del álbum coleccionable Panini Mundial 2026.</p>
+        <nav class="footer-contact-items">
+          <a class="footer-contact-item" href="https://wa.me/525587975494" target="_blank" rel="noopener noreferrer"><span>💬</span> WhatsApp: +52 55 8797 5494</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Álbum de Estampas</h5>
+        <nav class="footer-links">
+          <a href="productos.html#sobres">Blíster 10 Sobres</a>
+          <a href="productos.html#sobres">Caja 100 Sobres</a>
+          <a href="productos.html#album">Álbum Pasta Suave</a>
+          <a href="productos.html#album">Álbum Pasta Dura</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <nav class="footer-links">
+          <a href="privacidad.html">Aviso de Privacidad</a>
+          <a href="terminos.html">Términos y Condiciones</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p class="footer-copy">© 2026 Golazo Stickers. Todos los derechos reservados.</p>
+        <nav class="footer-legal-links">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+        </nav>
+      </div>
+      <div class="footer-disclaimer">
+        <strong>Aviso legal:</strong> Golazo Stickers es un distribuidor independiente. No está afiliado ni patrocinado por Panini Group, FIFA ni ningún torneo oficial. Panini® y los nombres de productos mencionados son marcas registradas de sus respectivos propietarios.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" aria-label="Pedir por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="whatsapp-float-tooltip">Pedir por WhatsApp</span>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

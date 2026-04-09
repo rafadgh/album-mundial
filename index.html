@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golazo Stickers — Álbum Coleccionable de Futbol Internacional</title>
+  <meta name="description" content="El álbum coleccionable de futbol internacional que todos quieren completar. Sobres, cajas, álbumes y paquetes. Pide por WhatsApp o formulario.">
+  <meta name="keywords" content="álbum coleccionable futbol, sobres coleccionables, stickers futbol, paquetes stickers, álbum selecciones mundial">
+  <meta property="og:title" content="Golazo Stickers — Álbum Coleccionable de Futbol Internacional" />
+  <meta property="og:description" content="Consigue tu álbum y sobres coleccionables del torneo más emocionante del futbol mundial." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .mid-cta .container { position: relative; z-index: 1; }
+    .mid-cta h2 { font-family: var(--font-display); font-size: clamp(2.2rem,4vw,3.2rem); color: #fff; margin-bottom: .5rem; }
+    .mid-cta p  { color: rgba(255,255,255,.82); margin-bottom: 2rem; font-size: 1.05rem; }
+    .mid-cta .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .mid-cta .btn-secondary { border-color: rgba(255,255,255,.65); }
+    .mid-cta .btn-secondary:hover { background: rgba(255,255,255,.15); border-color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon" aria-hidden="true">★</div>
+      <span class="brand-highlight">GOLAZO</span>&nbsp;STICKERS
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html#sobres">Sobres y Cajas</a></li>
+      <li><a href="productos.html#album">Álbum</a></li>
+      <li><a href="productos.html#paquetes">Paquetes</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li class="nav-cta">
+        <a href="#pedido" class="btn btn-primary btn-sm">Hacer pedido</a>
+      </li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero principal">
+  <div class="hero-bg">
+    <div class="geo-shape" style="--rot:15deg"></div>
+    <div class="geo-shape" style="--rot:45deg"></div>
+    <div class="geo-shape" style="--rot:-20deg"></div>
+    <div class="geo-shape" style="--rot:30deg"></div>
+  </div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-lines" aria-hidden="true">
+    <div class="hero-line"></div><div class="hero-line"></div>
+    <div class="hero-line"></div><div class="hero-line"></div>
+  </div>
+  <div class="confetti-container" aria-hidden="true"></div>
+  <div class="papel-picado-wrap" aria-hidden="true" id="papelPicado"></div>
+  <div class="eagle-wrap" aria-hidden="true">
+    <svg class="eagle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" fill="currentColor">
+      <ellipse cx="260" cy="240" rx="55" ry="70"/>
+      <circle cx="255" cy="145" r="40"/>
+      <path d="M285,140 C310,132 325,148 308,168 L285,158 Z"/>
+      <circle cx="278" cy="133" r="12" fill="#E0A000" opacity="0.9"/>
+      <circle cx="280" cy="133" r="7" fill="#111"/>
+      <path d="M210,210 C180,175 130,140 80,110 C50,92 15,90 8,118 C2,142 30,168 70,178 C110,188 165,190 210,215 Z"/>
+      <path d="M8,112 C-15,85 0,120 15,130"/><path d="M25,100 C5,72 18,108 35,118"/><path d="M45,94 C25,68 38,102 58,110"/>
+      <path d="M310,210 C340,175 390,140 440,110 C470,92 505,90 512,118 C518,142 490,168 450,178 C410,188 355,190 310,215 Z"/>
+      <path d="M512,112 C535,85 520,120 505,130"/><path d="M495,100 C515,72 502,108 485,118"/><path d="M475,94 C495,68 482,102 462,110"/>
+      <path d="M308,162 C340,190 335,230 310,220 C285,210 295,185 320,195" stroke="rgba(0,200,100,0.8)" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <ellipse cx="312" cy="162" rx="12" ry="8" transform="rotate(20,312,162)" fill="rgba(0,200,100,0.8)"/>
+      <path d="M235,112 C228,82 240,65 255,85" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M248,106 C244,76 258,60 265,80" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M260,106 C258,76 272,63 276,83" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M215,300 C220,340 240,360 260,370 C280,360 300,340 305,300 L295,350 L280,342 L260,360 L240,342 L225,350 Z"/>
+      <path d="M190,300 C180,268 205,255 230,275 L260,260 L290,275 C315,255 340,268 330,300 Z"/>
+      <ellipse cx="260" cy="305" rx="75" ry="30"/>
+      <path d="M180,295 C165,265 185,250 205,270 C190,290 185,300 180,295 Z"/>
+      <path d="M340,295 C355,265 335,250 315,270 C330,290 335,300 340,295 Z"/>
+      <line x1="240" y1="270" x2="230" y2="255" stroke="currentColor" stroke-width="2"/>
+      <line x1="260" y1="265" x2="260" y2="250" stroke="currentColor" stroke-width="2"/>
+      <line x1="280" y1="270" x2="290" y2="255" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="hero-gradient" aria-hidden="true"></div>
+  <div class="hero-floor-glow" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        Mundial 2026 · Preventa abierta · Envío 2ª quincena de mayo
+      </div>
+
+      <h1 class="hero-title">
+        <span class="t-white">COLECCIONA</span>
+        <span class="t-coral">EL MUNDO</span>
+        <span class="t-gold">DEL FUTBOL</span>
+      </h1>
+
+      <p class="hero-sub">
+        El álbum coleccionable de la pasión global. Cada sobre es una emoción.
+        Cada sticker, una historia. ¿Puedes completarlo?
+      </p>
+
+      <div class="hero-urgency" role="alert">
+        <span class="urgency-icon">📅</span>
+        Preventa activa · Envío estimado 2ª quincena de mayo 2026
+      </div>
+
+      <div class="hero-actions">
+        <a href="#pedido" class="btn btn-primary btn-lg">🛒 Haz tu pedido</a>
+        <a href="productos.html" class="btn btn-secondary btn-lg">Ver productos →</a>
+      </div>
+
+      <div class="hero-stats" aria-label="Estadísticas">
+        <div class="stat-item">
+          <div class="stat-num" data-counter="500" data-suffix="+">500+</div>
+          <div class="stat-label">Pedidos realizados</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-counter="48" data-suffix="">48</div>
+          <div class="stat-label">Selecciones</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-counter="98" data-suffix="%">98%</div>
+          <div class="stat-label">Clientes felices</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb"></div>
+      <div class="hero-card-stack">
+        <div class="hero-card">
+          <div class="card-glow"></div>
+          <div class="card-star">✦</div>
+          <div class="card-lines"><div class="card-line"></div><div class="card-line"></div><div class="card-line"></div></div>
+          <div class="card-number">01</div>
+        </div>
+        <div class="hero-card">
+          <div class="card-glow"></div>
+          <div class="card-star">◆</div>
+          <div class="card-lines"><div class="card-line"></div><div class="card-line"></div><div class="card-line"></div></div>
+          <div class="card-number">02</div>
+        </div>
+        <div class="hero-card hero-card-album">
+          <img src="FOTOS/%C3%81LBUM%20PASTA%20DURA_nobg.png" alt="Álbum Panini Mundial 2026" class="hero-album-cover">
+          <div class="card-glow"></div>
+        </div>
+        <div class="hero-floating-badge hfb-gold">✨ Edición<br>Especial</div>
+        <div class="hero-floating-badge hfb-turq">⚽ Mundial<br>2026</div>
+        <div class="hero-floating-badge hfb-coral">🔥 Stock<br>Limitado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section class="products section-py" id="productos" aria-labelledby="productos-title">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label">Catálogo · Mundial 2026</span>
+      <h2 class="section-title" id="productos-title">
+        Elige tu <span>producto</span>
+      </h2>
+      <p class="section-sub">
+        Álbum Panini oficial del Mundial 2026 · 48 selecciones · 112 páginas · Preventa abierta
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- ÁLBUM PASTA SUAVE -->
+      <article class="product-card reveal delay-1">
+        <div class="product-badge-area">
+          <span class="badge badge-coral">Entrada</span>
+        </div>
+        <div class="product-img"><img src="FOTOS/%C3%81LBUM%20PASTA%20SUAVE_nobg.png" alt="Álbum Pasta Suave" loading="lazy"></div>
+        <h3 class="product-name">Álbum<br>Pasta Suave</h3>
+        <ul class="product-includes">
+          <li>112 páginas de alta calidad</li>
+          <li>48 selecciones · 18 jugadores c/u</li>
+          <li>Diseño oficial Panini</li>
+          <li>Envío 2ª quincena de mayo 2026</li>
+        </ul>
+        <div class="product-price-area">
+          <div class="product-price">
+            <span class="currency">$</span><span data-price="albumSuave">99</span>
+            <span class="unit">MXN</span>
+          </div>
+          <p class="product-note">Álbum vacío · sin sobres</p>
+          <div class="stock-indicator" data-stock="albumSuave">
+            <span class="stock-dot yellow"></span>
+            <span class="stock-text yellow">Preventa</span>
+          </div>
+          <div class="product-qty">
+            <span class="qty-label">Cantidad:</span>
+            <div class="qty-controls">
+              <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Cantidad">
+              <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="orderProduct('Álbum Pasta Suave', this.closest('.product-card').querySelector('.qty-input').value, '$90 MXN/pza')">
+            📅 Apartar en preventa
+          </button>
+        </div>
+      </article>
+
+      <!-- ÁLBUM PASTA DURA -->
+      <article class="product-card featured reveal delay-2">
+        <div class="product-badge-area">
+          <span class="badge badge-gold">⭐ Premium</span>
+        </div>
+        <div class="product-img"><img src="FOTOS/%C3%81LBUM%20PASTA%20DURA_nobg.png" alt="Álbum Pasta Dura" loading="lazy"></div>
+        <h3 class="product-name">Álbum<br>Pasta Dura</h3>
+        <ul class="product-includes">
+          <li>112 páginas de alta calidad</li>
+          <li>48 selecciones · 18 jugadores c/u</li>
+          <li>Tapa dura resistente y premium</li>
+          <li>Envío 2ª quincena de mayo 2026</li>
+        </ul>
+        <div class="product-price-area">
+          <div class="product-price">
+            <span class="currency">$</span><span data-price="albumDura">349</span>
+            <span class="unit">MXN</span>
+          </div>
+          <p class="product-note">Álbum vacío · sin sobres</p>
+          <div class="stock-indicator" data-stock="albumDura">
+            <span class="stock-dot yellow"></span>
+            <span class="stock-text yellow">Preventa</span>
+          </div>
+          <div class="product-qty">
+            <span class="qty-label">Cantidad:</span>
+            <div class="qty-controls">
+              <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Cantidad">
+              <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+            </div>
+          </div>
+          <button class="btn btn-gold btn-full" onclick="orderProduct('Álbum Pasta Dura', this.closest('.product-card').querySelector('.qty-input').value, '$330 MXN/pza')">
+            📅 Apartar en preventa
+          </button>
+        </div>
+      </article>
+
+      <!-- BLISTER 10 SOBRES -->
+      <article class="product-card reveal delay-3">
+        <div class="product-badge-area">
+          <span class="badge badge-coral">Más popular</span>
+        </div>
+        <div class="product-img"><img src="FOTOS/10%20SOBRES_nobg.png" alt="10 Sobres" loading="lazy"></div>
+        <h3 class="product-name">Blister<br>10 Sobres</h3>
+        <ul class="product-includes">
+          <li>10 sobres de estampas</li>
+          <li>Stickers especiales posibles</li>
+          <li>Embalaje protector blíster</li>
+          <li>$24 MXN por sobre</li>
+        </ul>
+        <div class="product-price-area">
+          <div class="product-price">
+            <span class="currency">$</span><span data-price="blister10">240</span>
+            <span class="unit">MXN</span>
+          </div>
+          <p class="product-note">= $24 por sobre</p>
+          <div class="stock-indicator" data-stock="blister10">
+            <span class="stock-dot yellow"></span>
+            <span class="stock-text yellow">Preventa</span>
+          </div>
+          <div class="product-qty">
+            <span class="qty-label">Blisters:</span>
+            <div class="qty-controls">
+              <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Cantidad">
+              <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="orderProduct('Blister 10 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$240 MXN/blíster')">
+            📅 Apartar en preventa
+          </button>
+        </div>
+      </article>
+
+      <!-- CAJA 100 SOBRES -->
+      <article class="product-card reveal delay-4">
+        <div class="product-badge-area">
+          <span class="badge badge-turq">Para revender</span>
+        </div>
+        <div class="product-img"><img src="FOTOS/CAJA%20(100%20SOBRES)_nobg.png" alt="Caja 100 Sobres" loading="lazy"></div>
+        <h3 class="product-name">Caja<br>100 Sobres</h3>
+        <ul class="product-includes">
+          <li>100 sobres por caja</li>
+          <li>Ideal para reventa en tienda</li>
+          <li>$24 MXN por sobre</li>
+          <li>Mismo precio que el blíster</li>
+        </ul>
+        <div class="product-price-area">
+          <div class="product-price">
+            <span class="currency">$</span><span data-price="caja100">2,400</span>
+            <span class="unit">MXN</span>
+          </div>
+          <p class="product-note">= $24 por sobre</p>
+          <div class="stock-indicator" data-stock="caja100">
+            <span class="stock-dot yellow"></span>
+            <span class="stock-text yellow">Preventa</span>
+          </div>
+          <div class="product-qty">
+            <span class="qty-label">Cajas:</span>
+            <div class="qty-controls">
+              <button class="qty-btn" data-action="minus" aria-label="Menos">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="50" aria-label="Cantidad">
+              <button class="qty-btn" data-action="plus" aria-label="Más">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="orderProduct('Caja 100 Sobres', this.closest('.product-card').querySelector('.qty-input').value, '$2,400 MXN/caja')">
+            📅 Apartar en preventa
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center reveal" style="margin-top:2.5rem;">
+      <a href="productos.html" class="btn btn-secondary">Ver catálogo completo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="how-it-works section-py" id="como-funciona" aria-labelledby="como-title">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label">Proceso</span>
+      <h2 class="section-title" id="como-title">Así de <span>fácil</span> funciona</h2>
+      <p class="section-sub">Hacer tu pedido toma menos de 2 minutos.</p>
+    </div>
+    <div class="steps-grid" style="position:relative;">
+      <div class="steps-connector"></div>
+      <div class="step-card reveal delay-1">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Elige tu producto</h3>
+        <p class="step-desc">Selecciona el sobre, álbum o paquete que mejor se adapte a lo que buscas.</p>
+      </div>
+      <div class="step-card reveal delay-2">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Manda tu pedido</h3>
+        <p class="step-desc">Llena el formulario en segundos o escríbenos directo por WhatsApp.</p>
+      </div>
+      <div class="step-card reveal delay-3">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Confirmamos</h3>
+        <p class="step-desc">Te contactamos para confirmar disponibilidad y método de pago.</p>
+      </div>
+      <div class="step-card reveal delay-4">
+        <div class="step-number">4</div>
+        <h3 class="step-title">¡Recibes tu pedido!</h3>
+        <p class="step-desc">Realizas el pago y tu pedido queda listo. ¡A coleccionar!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA INTERMEDIO -->
+<div class="mid-cta">
+  <div class="container reveal">
+    <h2>¿Listo para empezar tu colección?</h2>
+    <p>Aprovecha la disponibilidad actual. El stock se agota rápido en temporada de torneo.</p>
+    <div class="cta-actions">
+      <a href="#pedido" class="btn btn-secondary btn-lg">📝 Llenar formulario</a>
+      <a href="#" class="btn btn-whatsapp btn-lg" data-whatsapp="true">💬 Pedir por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- PEDIDOS RÁPIDOS -->
+<section class="order-section section-py" id="pedido" aria-labelledby="pedido-title">
+  <div class="container">
+    <div class="order-grid">
+      <div class="order-info reveal-left">
+        <span class="section-label">Pedidos</span>
+        <h2 class="order-info-title section-title" id="pedido-title">
+          Haz tu pedido<br><span>ahora mismo</span>
+        </h2>
+        <p class="order-info-desc">
+          Dos opciones para pedir: llena el formulario o escríbenos por WhatsApp. Respondemos en menos de 24 horas hábiles.
+        </p>
+        <div class="order-whatsapp-block">
+          <h4>💬 Pide directo por WhatsApp</h4>
+          <p>Escríbenos y un asesor te atenderá personalmente.</p>
+          <span class="whatsapp-number">+52 55 8797 5494</span>
+          <a href="#" class="btn btn-whatsapp btn-full" data-whatsapp="true">💬 Abrir WhatsApp ahora</a>
+        </div>
+      </div>
+
+      <div class="order-form reveal-right">
+        <h3 class="form-title">📋 Formulario de pedido</h3>
+        <form class="order-form-el" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono / WhatsApp *</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="ciudad">Ciudad / Estado *</label>
+              <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required autocomplete="address-level2">
+            </div>
+            <div class="form-group full">
+              <label for="tipo_pedido">Tipo de pedido *</label>
+              <select id="tipo_pedido" name="tipo_pedido" required>
+                <option value="" disabled selected>Selecciona un producto</option>
+                <option value="blister10">10 Sobres — $240 MXN</option>
+                <option value="albumSuave">Álbum Pasta Suave — $90 MXN</option>
+                <option value="albumDura">Álbum Pasta Dura — $330 MXN</option>
+                <option value="caja100">Caja 100 Sobres — $2,400 MXN</option>
+                <option value="bundleSuave">Álbum Suave + Caja 100 — $2,450 MXN</option>
+                <option value="bundleDura">Álbum Dura + Caja 100 — $2,700 MXN</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad *</label>
+              <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 2" min="1" required>
+            </div>
+            <div class="form-group full">
+              <label for="comentarios">Comentarios (opcional)</label>
+              <textarea id="comentarios" name="comentarios" placeholder="¿Alguna pregunta o especificación?"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-full btn-lg">🚀 Enviar pedido</button>
+            <button type="button" class="btn btn-whatsapp btn-full" data-whatsapp="true">💬 Enviar por WhatsApp</button>
+          </div>
+          <p class="form-note">* Al enviar aceptas ser contactado para confirmar tu pedido. No compartimos tus datos.</p>
+          <div class="form-success" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section class="trust section-py" id="confianza" aria-labelledby="trust-title">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label">Confianza</span>
+      <h2 class="section-title" id="trust-title">Por qué elegir <span>Golazo Stickers</span></h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal delay-1">
+        <div class="trust-icon">💬</div>
+        <h4>Atención directa</h4>
+        <p>Trato personal, sin bots. Un equipo real que responde tus dudas.</p>
+      </div>
+      <div class="trust-card reveal delay-2">
+        <div class="trust-icon">⚡</div>
+        <h4>Respuesta rápida</h4>
+        <p>Confirmamos tu pedido en menos de 24 horas hábiles.</p>
+      </div>
+      <div class="trust-card reveal delay-3">
+        <div class="trust-icon">📦</div>
+        <h4>Pedidos claros</h4>
+        <p>Confirmamos disponibilidad y precio antes de cobrar. Sin sorpresas.</p>
+      </div>
+      <div class="trust-card reveal delay-4">
+        <div class="trust-icon">✅</div>
+        <h4>Stock verificado</h4>
+        <p>Siempre revisamos existencias antes de confirmar tu pedido.</p>
+      </div>
+      <div class="trust-card reveal delay-5">
+        <div class="trust-icon">🔒</div>
+        <h4>Datos seguros</h4>
+        <p>Tu información solo se usa para procesar tu pedido. Nada más.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon">🤝</div>
+        <h4>Ayuda personalizada</h4>
+        <p>Si no sabes qué pedir, te orientamos para elegir el mejor paquete.</p>
+      </div>
+    </div>
+
+    <h3 class="testimonials-title reveal" style="margin-top:4rem;">Lo que dicen nuestros <span style="color:var(--gold)">clientes</span></h3>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">"Pedí 3 cajas para mi tienda y llegaron en perfectas condiciones. Mis clientes enloquecieron. Ya voy en el segundo pedido."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">CR</div>
+          <div><div class="author-name">Carlos R.</div><div class="author-place">Monterrey, NL</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">"Súper rápidos para responder. Pedí el paquete inicio para mi hijo y estaba completísimo. El álbum es de muy buena calidad."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,var(--turquoise),var(--night-soft));" aria-hidden="true">ML</div>
+          <div><div class="author-name">Mariana L.</div><div class="author-place">Guadalajara, JAL</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">"Me dijeron los tiempos desde el principio, llegó en la fecha que dijeron. Confiable, recomendado 100%."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,var(--gold),var(--night-soft));" aria-hidden="true">JT</div>
+          <div><div class="author-name">Jorge T.</div><div class="author-place">CDMX</div></div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.75rem;color:rgba(248,250,252,.28);margin-top:1rem;">* Testimonios editables en index.html</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-py" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title" id="faq-title">Resolvemos tus <span>dudas</span></h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item reveal delay-1" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Cómo se confirma mi pedido? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Una vez que llenas el formulario o nos escribes por WhatsApp, te contactamos para confirmar: disponibilidad de stock, costo total y método de pago. Solo hasta entonces procedes al pago.</p></div>
+      </div>
+
+      <div class="faq-item reveal delay-2" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Qué métodos de pago manejan? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Aceptamos transferencia bancaria (SPEI), depósito en OXXO, pago con tarjeta (a través de link de pago seguro) y efectivo donde aplique. Te informamos las opciones al confirmar tu pedido.</p></div>
+      </div>
+
+      <div class="faq-item reveal delay-3" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Qué pasa si se agota el producto? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Siempre verificamos stock antes de confirmar. Si al procesar tu pedido hay escasez, te avisamos de inmediato y te ofrecemos una alternativa o reembolso completo si ya habías pagado.</p></div>
+      </div>
+
+      <div class="faq-item reveal delay-4" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Puedo apartar producto? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Sí, en temporada de alta demanda manejamos apartados con un anticipo. Escríbenos y te explicamos las condiciones.</p></div>
+      </div>
+
+      <div class="faq-item reveal delay-5" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Cómo sé si hay disponibilidad? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Indicamos el estado de cada producto en esta página (disponible, stock limitado, agotado). También puedes preguntarnos directamente por WhatsApp para información en tiempo real.</p></div>
+      </div>
+
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Facturan? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>Para pedidos especiales podemos evaluar opciones de facturación. Contáctanos directamente para más información.</p></div>
+      </div>
+
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">¿Este sitio es oficial de algún torneo o marca? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer"><p>No. Golazo Stickers es una plataforma comercial independiente. No está afiliada, patrocinada ni respaldada por FIFA, Panini, ni ninguna organización oficial de fútbol o torneo. Identidad visual 100% original.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon" aria-hidden="true">★</div>
+          <span style="color:var(--coral)">GOLAZO</span>&nbsp;STICKERS
+        </div>
+        <p class="footer-tagline">Plataforma independiente de distribución de álbumes coleccionables de futbol internacional.</p>
+        <nav class="footer-contact-items" aria-label="Contacto">
+          <a class="footer-contact-item" href="https://wa.me/525587975494" target="_blank" rel="noopener noreferrer"><span>💬</span> WhatsApp: +52 55 8797 5494</a>
+          <span class="footer-contact-item"><span>📍</span> Ciudad de México, México</span>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Productos</h5>
+        <nav class="footer-links">
+          <a href="productos.html#sobres">Sobres y Cajas</a>
+          <a href="productos.html#album">Álbum</a>
+          <a href="productos.html#paquetes">Paquetes</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <nav class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="#pedido">Hacer pedido</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <nav class="footer-links">
+          <a href="privacidad.html">Aviso de Privacidad</a>
+          <a href="terminos.html">Términos y Condiciones</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p class="footer-copy">© 2025 Golazo Stickers. Todos los derechos reservados.</p>
+        <nav class="footer-legal-links" aria-label="Links legales">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer-disclaimer" role="note">
+        <strong>Aviso legal importante:</strong> Golazo Stickers es una plataforma de distribución independiente. No está afiliada, patrocinada, respaldada ni oficialmente vinculada con la FIFA, Panini, ni con ningún torneo oficial de fútbol, selección nacional o entidad deportiva. Todas las marcas comerciales mencionadas con fines informativos pertenecen a sus respectivos propietarios. La identidad visual, nombre y diseño de este sitio son completamente originales y no pretenden representar ninguna marca oficial.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" aria-label="Pedir por WhatsApp" role="button">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="whatsapp-float-tooltip">Pedir por WhatsApp</span>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

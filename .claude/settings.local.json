@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ruby --version)",
+      "Bash(php --version)",
+      "Bash(cp -r /Users/rafadiez/Documents/CLAUDE/PANINI /tmp/panini)",
+      "Read(//tmp/**)",
+      "Bash(ls /Users/rafadiez/Documents/CLAUDE/PANINI/*.html)"
+    ]
+  }
+}

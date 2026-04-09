@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "golazo-stickers",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8080", "/Users/rafadiez/Documents/CLAUDE/PANINI"],
+      "port": 8080
+    }
+  ]
+}
