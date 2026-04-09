@@ -1,5 +1,5 @@
 /* ============================================================
-   GOLAZO STICKERS — MAIN JAVASCRIPT
+   ÁLBUM MUNDIAL — MAIN JAVASCRIPT
    Editable config at the top of the file.
    ============================================================ */
 
@@ -9,13 +9,13 @@ const CONFIG = {
   whatsappNumber: '525587975494',
 
   // Nombre de marca
-  brandName: 'Golazo Stickers',
+  brandName: 'Álbum Mundial',
 
   // Ciudad base
   city: 'Ciudad de México',
 
   // Mensaje por defecto de WhatsApp
-  whatsappDefaultMsg: 'Hola, me interesa hacer un pedido de Golazo Stickers. ¿Pueden ayudarme?',
+  whatsappDefaultMsg: 'Hola, me interesa hacer un pedido de Álbum Mundial. ¿Pueden ayudarme?',
 
   // Precio en MXN (editar aquí para reflejar en toda la página)
   // — Álbum de estampas —
