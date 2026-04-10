@@ -124,12 +124,28 @@ function initNavbar() {
     document.body.style.overflow = navLinks?.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Cierra menú al hacer click en un enlace
+  // Cierra menú al hacer click en un enlace + smooth scroll si es ancla de la misma página
   navLinks?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
+    a.addEventListener('click', (e) => {
       toggle?.classList.remove('open');
       navLinks?.classList.remove('open');
       document.body.style.overflow = '';
+
+      const href = a.getAttribute('href') || '';
+      if (!href.includes('#')) return;
+
+      const hash = '#' + href.split('#')[1];
+      const currentPage = location.pathname.split('/').pop() || 'index.html';
+      const linkPage   = href.split('#')[0] || currentPage;
+
+      // Si el link apunta a la misma página (o no tiene página), scroll suave
+      if (!linkPage || linkPage === currentPage) {
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     });
   });
 }

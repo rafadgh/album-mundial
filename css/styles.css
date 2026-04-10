@@ -36,6 +36,7 @@
   --section-py:   5.5rem;
   --radius:       1rem;
   --radius-sm:    0.5rem;
+  --radius-lg:    1.25rem;
   --radius-xl:    1.5rem;
   --radius-2xl:   2rem;
 
@@ -331,6 +332,8 @@ input,select,textarea,button { font-family:var(--font-body); }
   cursor:pointer;
   flex-direction:column; gap:5px;
   padding:4px;
+  position:relative;
+  z-index:1001;
 }
 .nav-toggle span { display:block; width:26px; height:2px; background:var(--white); border-radius:2px; transition:var(--transition); }
 .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
@@ -607,29 +610,42 @@ input,select,textarea,button { font-family:var(--font-body); }
 .hero-floating-badge {
   position:absolute;
   border-radius:var(--radius);
-  padding:.65rem 1rem;
-  font-size:.73rem; font-weight:900;
+  padding:.75rem 1.1rem;
+  font-size:.78rem; font-weight:900;
   text-align:center; line-height:1.3;
   box-shadow:var(--shadow-md);
+  z-index:10;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
 }
+/* Verde México — Edición Especial */
 .hfb-gold {
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:var(--night);
-  top:-14px; right:-14px;
+  background:linear-gradient(135deg,#00C563,#007A40);
+  color:#fff;
+  border:2px solid rgba(0,255,120,.35);
+  box-shadow:0 0 20px rgba(0,197,99,.5), var(--shadow-md);
+  top:-18px; right:-20px;
   animation:floatBadge 4s ease-in-out infinite .5s;
 }
+/* Blanco — Mundial 2026 */
 .hfb-turq {
-  background:linear-gradient(135deg,var(--turq-light),var(--turq-dark));
-  color:#fff;
-  bottom:24px; left:-24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(230,238,248,.9));
+  color:var(--night);
+  border:2px solid rgba(255,255,255,.6);
+  box-shadow:0 0 20px rgba(255,255,255,.3), var(--shadow-md);
+  bottom:24px; left:-28px;
   animation:floatBadge 5s ease-in-out infinite 1s;
 }
+/* Rojo México — Stock Limitado */
 .hfb-coral {
-  background:linear-gradient(135deg,var(--coral-light),var(--coral-dark));
+  background:linear-gradient(135deg,#FF2B45,#CC1A30);
   color:#fff;
-  top:40%; right:-30px;
+  border:2px solid rgba(255,60,80,.4);
+  box-shadow:0 0 20px rgba(204,26,48,.55), var(--shadow-md);
+  top:38%; right:-32px;
   animation:floatBadge 4.5s ease-in-out infinite 0s;
-  font-size:.65rem;
 }
 
 /* Orb detrás del visual */
