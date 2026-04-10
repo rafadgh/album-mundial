@@ -345,19 +345,21 @@ input,select,textarea,button { font-family:var(--font-body); }
   .nav-links {
     position:fixed;
     top:0; left:0; right:0; bottom:0;
-    flex-direction:column; justify-content:center;
+    flex-direction:column; justify-content:flex-start;
     background:rgba(0,10,3,.97);
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
-    backdrop-filter:blur(24px);
-    gap:2rem;
+    gap:1.4rem;
     transform:translateX(100%);
     transition:transform .4s ease;
     z-index:999;
-    padding:2rem;
+    padding:5.5rem 2rem 2.5rem;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
   }
   .nav-links.open  { transform:translateX(0); }
-  .nav-links a     { font-size:1.4rem; }
+  .nav-links a     { font-size:1.35rem; }
+  .nav-cta { margin-top:.6rem; }
   .nav-cta .btn    { width:100%; justify-content:center; font-size:1.1rem; padding:1rem 2rem; }
 }
 
@@ -1387,3 +1389,100 @@ input,select,textarea,button { font-family:var(--font-body); }
   .cta-actions{flex-direction:column}
   .cta-actions .btn{width:100%}
 }
+
+/* background-attachment:fixed falla en móvil Safari/Chrome */
+@media (max-width:900px) {
+  body { background-attachment: scroll; }
+}
+
+/* ─── PRODUCT MODAL ─────────────────────────────────────── */
+.product-modal {
+  position:fixed; inset:0; z-index:3000;
+  display:flex; align-items:center; justify-content:center;
+  padding:1rem;
+  opacity:0; pointer-events:none;
+  transition:opacity .3s ease;
+}
+.product-modal.open { opacity:1; pointer-events:all; }
+.modal-overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.88);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.modal-content {
+  position:relative; z-index:1;
+  background:linear-gradient(145deg,var(--night-soft),var(--night-mid));
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-2xl);
+  width:100%; max-width:800px; max-height:92vh;
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  box-shadow:var(--shadow-lg),0 0 60px rgba(0,0,0,.5);
+  transform:scale(.93) translateY(24px);
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.product-modal.open .modal-content { transform:scale(1) translateY(0); }
+.modal-close {
+  position:sticky; top:1rem; left:100%;
+  margin:1rem 1rem 0 0;
+  float:right;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
+  border-radius:50%; width:40px; height:40px;
+  color:var(--white); font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s; flex-shrink:0; z-index:2;
+}
+.modal-close:hover { background:rgba(255,255,255,.22); }
+.modal-body {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:2rem; padding:2rem 2.5rem 2.5rem;
+  clear:both;
+}
+@media (max-width:620px) {
+  .modal-body { grid-template-columns:1fr; padding:1.2rem 1.4rem 2rem; gap:1.2rem; }
+}
+.modal-img-col {
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius-xl);
+  padding:2rem; min-height:240px;
+}
+.modal-img {
+  max-height:320px; width:auto; max-width:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 32px rgba(0,0,0,.6));
+  transition:transform .4s ease;
+}
+.modal-img:hover { transform:scale(1.04); }
+.modal-info-col { display:flex; flex-direction:column; gap:.9rem; }
+.modal-badge    { display:flex; gap:.4rem; flex-wrap:wrap; }
+.modal-name {
+  font-family:var(--font-display); font-size:2.3rem;
+  color:var(--white); line-height:1.05;
+}
+.modal-includes {
+  list-style:none; font-size:.88rem;
+  color:rgba(248,250,252,.65); line-height:1.75;
+}
+.modal-includes li { display:flex; align-items:flex-start; gap:.4rem; padding:.1rem 0; }
+.modal-includes li::before { content:'✦'; color:var(--coral); font-size:.55rem; margin-top:4px; flex-shrink:0; }
+.modal-price {
+  font-family:var(--font-display); font-size:2.6rem;
+  color:var(--white); line-height:1;
+}
+.modal-price-note { font-size:.76rem; color:rgba(248,250,252,.38); margin-top:.15rem; }
+.modal-stock-wrap { display:flex; align-items:center; gap:.4rem; font-size:.76rem; font-weight:700; }
+.modal-cta { margin-top:auto; padding-top:.5rem; }
+
+/* Cursor zoom en imágenes de tarjeta */
+.product-img { cursor:pointer; position:relative; }
+.product-img::after {
+  content:'🔍';
+  position:absolute; bottom:.5rem; right:.5rem;
+  font-size:1.1rem; opacity:0;
+  transition:opacity .25s ease;
+  pointer-events:none;
+  filter:drop-shadow(0 1px 4px rgba(0,0,0,.8));
+}
+.product-img:hover::after { opacity:.85; }

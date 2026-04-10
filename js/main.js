@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initConfetti();
   initPapelPicado();
   initSparks();
+  initProductModals();
 });
 
 /* ============================================================
@@ -526,7 +527,114 @@ function initSparks() {
   }
 }
 
+/* ============================================================
+   PRODUCT MODAL — click en imagen abre detalle
+   ============================================================ */
+let _modalOrderBtn = null; // referencia al botón original de la tarjeta
+
+function initProductModals() {
+  // Crear el modal en el DOM dinámicamente
+  const modalHTML = `
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal-body">
+        <div class="modal-img-col">
+          <img id="modalImg" src="" alt="" class="modal-img">
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-badge" id="modalBadge"></div>
+          <h2 class="modal-name" id="modalName"></h2>
+          <ul class="modal-includes" id="modalIncludes"></ul>
+          <div>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-price-note" id="modalPriceNote"></div>
+          </div>
+          <div class="modal-stock-wrap" id="modalStock"></div>
+          <div class="modal-cta">
+            <button id="modalCtaBtn" class="btn btn-primary btn-full">📅 Apartar en preventa</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+  // Click en imagen de cualquier tarjeta
+  document.querySelectorAll('.product-card').forEach(card => {
+    const imgWrap = card.querySelector('.product-img');
+    if (!imgWrap) return;
+    imgWrap.addEventListener('click', () => openProductModal(card));
+  });
+
+  // Cerrar
+  document.getElementById('modalOverlay')?.addEventListener('click', closeProductModal);
+  document.getElementById('modalClose')?.addEventListener('click', closeProductModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeProductModal();
+  });
+
+  // CTA del modal → ejecuta el botón original de la tarjeta
+  document.getElementById('modalCtaBtn')?.addEventListener('click', () => {
+    if (_modalOrderBtn) _modalOrderBtn.click();
+    closeProductModal();
+  });
+}
+
+function openProductModal(card) {
+  const modal = document.getElementById('productModal');
+  if (!modal) return;
+
+  const img         = card.querySelector('.product-img img');
+  const name        = card.querySelector('.product-name');
+  const includes    = card.querySelector('.product-includes');
+  const priceEl     = card.querySelector('.product-price');
+  const noteEl      = card.querySelector('.product-note');
+  const badgeArea   = card.querySelector('.product-badge-area');
+  const stockEl     = card.querySelector('.stock-indicator');
+  const orderBtn    = card.querySelector('.btn[onclick], .btn-primary, .btn-gold');
+
+  document.getElementById('modalImg').src       = img?.src || '';
+  document.getElementById('modalImg').alt       = img?.alt || '';
+  document.getElementById('modalName').innerHTML = name?.innerHTML || '';
+  document.getElementById('modalIncludes').innerHTML = includes?.innerHTML || '';
+  document.getElementById('modalBadge').innerHTML    = badgeArea?.innerHTML || '';
+
+  // Precio limpio: el span [data-price] ya contiene "$90" después de updatePricesFromConfig
+  const priceSpan = card.querySelector('[data-price]');
+  const priceVal  = priceSpan?.textContent?.trim() || '';
+  const priceNum = priceVal.replace(/^\$/, '');
+  document.getElementById('modalPrice').innerHTML =
+    `<small style="font-size:1.3rem;color:var(--gray);font-weight:700;vertical-align:top;margin-top:10px;display:inline-block">$</small>${priceNum} <small style="font-size:.85rem;color:var(--gray);font-weight:500">MXN</small>`;
+
+  document.getElementById('modalPriceNote').textContent = noteEl?.textContent || '';
+  document.getElementById('modalStock').innerHTML    = stockEl?.outerHTML || '';
+
+  // Estilo del CTA según tarjeta featured
+  const ctaBtn = document.getElementById('modalCtaBtn');
+  if (ctaBtn) {
+    ctaBtn.className = card.classList.contains('featured')
+      ? 'btn btn-gold btn-full'
+      : 'btn btn-primary btn-full';
+    ctaBtn.textContent = orderBtn?.textContent?.trim() || '📅 Apartar en preventa';
+  }
+  _modalOrderBtn = orderBtn || null;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+  const modal = document.getElementById('productModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  _modalOrderBtn = null;
+}
+
 // Exponemos para uso en HTML inline
-window.orderProduct = orderProduct;
-window.openWhatsApp = openWhatsApp;
-window.CONFIG       = CONFIG;
+window.orderProduct      = orderProduct;
+window.openWhatsApp      = openWhatsApp;
+window.CONFIG            = CONFIG;
+window.closeProductModal = closeProductModal;
