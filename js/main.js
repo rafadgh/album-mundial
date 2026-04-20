@@ -122,7 +122,9 @@ function initNavbar() {
   toggle?.addEventListener('click', () => {
     toggle.classList.toggle('open');
     navLinks?.classList.toggle('open');
-    document.body.style.overflow = navLinks?.classList.contains('open') ? 'hidden' : '';
+    const isOpen = navLinks?.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // Cierra menú al hacer click en un enlace + smooth scroll si es ancla de la misma página
@@ -131,6 +133,7 @@ function initNavbar() {
       toggle?.classList.remove('open');
       navLinks?.classList.remove('open');
       document.body.style.overflow = '';
+      toggle?.setAttribute('aria-expanded', 'false');
 
       const href = a.getAttribute('href') || '';
       if (!href.includes('#')) return;
@@ -148,6 +151,27 @@ function initNavbar() {
         }
       }
     });
+  });
+
+  // Cierra menú al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!navLinks?.classList.contains('open')) return;
+    if (!navLinks.contains(e.target) && !toggle?.contains(e.target)) {
+      toggle?.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Cierra menú al presionar Atrás en Android
+  window.addEventListener('popstate', () => {
+    if (navLinks?.classList.contains('open')) {
+      toggle?.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
@@ -193,12 +217,15 @@ function initFAQ() {
         i.classList.remove('open');
         const a = i.querySelector('.faq-answer');
         if (a) a.style.maxHeight = '0';
+        const q = i.querySelector('.faq-question');
+        if (q) q.setAttribute('aria-expanded', 'false');
       });
 
       // Abre el clicked (si no estaba abierto)
       if (!isOpen) {
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -437,20 +464,7 @@ function updateStockFromConfig() {
   });
 }
 
-/* ============================================================
-   SMOOTH SCROLL para anclas internas
-   ============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (!href || href === '#') return; // evita SyntaxError con querySelector('#')
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
+/* Smooth scroll para anclas internas manejado dentro de initNavbar() */
 
 /* ============================================================
    HELPER: crear mensaje WhatsApp con producto específico
@@ -533,12 +547,16 @@ function initSparks() {
 let _modalOrderBtn = null; // referencia al botón original de la tarjeta
 
 function initProductModals() {
+  if (!document.querySelector('.product-card')) return;
+
   // Crear el modal en el DOM dinámicamente
   const modalHTML = `
   <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal-close-row">
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      </div>
       <div class="modal-body">
         <div class="modal-img-col">
           <img id="modalImg" src="" alt="" class="modal-img">
@@ -568,8 +586,13 @@ function initProductModals() {
     imgWrap.addEventListener('click', () => openProductModal(card));
   });
 
-  // Cerrar
-  document.getElementById('modalOverlay')?.addEventListener('click', closeProductModal);
+  // Cerrar — click en el wrapper externo (fuera del modal-content)
+  document.getElementById('productModal')?.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('productModal') ||
+        e.target === document.getElementById('modalOverlay')) {
+      closeProductModal();
+    }
+  });
   document.getElementById('modalClose')?.addEventListener('click', closeProductModal);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeProductModal();
@@ -623,13 +646,21 @@ function openProductModal(card) {
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+  // Fix iOS Safari: prevent body scroll
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+  document.body.dataset.scrollY = window.scrollY;
 }
 
 function closeProductModal() {
   const modal = document.getElementById('productModal');
   if (!modal) return;
   modal.classList.remove('open');
+  const scrollY = document.body.dataset.scrollY || '0';
   document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.width = '';
+  window.scrollTo(0, parseInt(scrollY));
   _modalOrderBtn = null;
 }
 

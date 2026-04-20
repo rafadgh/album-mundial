@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mayoreo y Distribución — Álbum Mundial</title>
   <meta name="description" content="Pide por mayoreo y conviértete en distribuidor de álbumes coleccionables de futbol. Precios especiales desde 500 sobres. Cobertura en toda la República Mexicana.">
+  <meta property="og:title" content="Mayoreo y Distribución — Álbum Mundial" />
+  <meta property="og:description" content="Precios especiales para revendedores y distribuidores. Desde 500 sobres. Cobertura en toda la República Mexicana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://albumundial.com/mayoreo.html" />
+  <meta property="og:image" content="https://albumundial.com/PRODUCTOS%20SIN%20FONDO/%C3%81LBUM%20PASTA%20DURA.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,48 +64,6 @@
     }
     .tier-features li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; margin-top: 4px; }
 
-    /* Formulario cotización */
-    .cotiza-section {
-      background:
-        linear-gradient(rgba(0,5,2,.86), rgba(0,5,2,.86)),
-        url('FONDOS/FONDO%204.PNG') center/cover scroll;
-      padding: var(--section-py) 0;
-    }
-    .cotiza-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .cotiza-info h2 { font-family: var(--font-display); font-size: 2.8rem; line-height: 1.05; margin-bottom: 1rem; }
-    .cotiza-info p { color: rgba(248,250,252,0.6); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .cotiza-highlight {
-      background: rgba(212,160,23,0.1);
-      border: 1px solid rgba(212,160,23,0.3);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .cotiza-highlight h4 { color: var(--gold-light); font-weight: 800; margin-bottom: 0.4rem; }
-    .cotiza-highlight p  { color: rgba(248,250,252,0.6); font-size: 0.85rem; margin: 0; }
-
-    .cotiza-form-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: var(--radius-xl);
-      padding: 2.5rem;
-    }
-    .cotiza-form-box h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      margin-bottom: 0.4rem;
-      color: var(--gold-light);
-    }
-    .cotiza-form-box .form-sub {
-      font-size: 0.85rem;
-      color: rgba(248,250,252,0.5);
-      margin-bottom: 1.5rem;
-    }
 
     @media (max-width: 900px) {
       .cotiza-inner { grid-template-columns: 1fr; }
@@ -131,15 +96,17 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
   <div class="container">
     <a href="index.html" class="nav-logo">
       <div class="logo-icon" aria-hidden="true">★</div>
-      <span>ÁLBUM</span>&nbsp;MUNDIAL
+      <span class="brand-highlight">ÁLBUM</span>&nbsp;MUNDIAL
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
+      <li><a href="productos.html#sobres">Sobres y Cajas</a></li>
+      <li><a href="productos.html#album">Álbum</a></li>
+      <li><a href="productos.html#paquetes">Paquetes</a></li>
       <li><a href="mayoreo.html">Mayoreo</a></li>
       <li><a href="contacto.html">Contacto</a></li>
       <li class="nav-cta"><a href="#cotizar" class="btn btn-gold btn-sm">Cotizar ahora</a></li>
